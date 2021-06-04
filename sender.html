@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="create-call">
+            <div id="first" style="display: block;">
+                <input placeholder="Create a ID and start call"
+                    type="text"
+                    id="username-input" />
+            <!--<button onclick="sendUsername()">Send</button>-->
+            <button class="button" onclick="startCall()">Start Call</button>
+            </div>
+            <div id="second" style="display: none;">
+                <h3 style="font-weight:400; text-transform: uppercase;">Share this link to join the CALL.</h3>
+                <input type="text" value="" id="myInput" readonly>
+                <div class="tooltip">
+                    <button onclick="myFunction()" onmouseout="outFunc()">
+                      <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                      Copy link
+                      </button>
+                </div>
+            </div>
+        </div>
+        <div id="video-call-div">
+            <video muted id="local-video" autoplay></video>
+            <video id="remote-video" autoplay></video>
+            
+            <div class="call-action-div">
+                <a href=""><img src="end_call_icon.png"></a>
+                <button onclick="muteVideo()">Mute Video</button>
+                <button onclick="muteAudio()">Mute Audio</button>
+            </div>
+            <div id="alert-box" style="display: none;">
+                <p id="alert">
+                    The caller is happy.
+                </p>
+            </div>
+        </div>
+        <script src="node_modules/face-api.js/dist/face-api.js"></script>
+        <script src="sender.js"></script>
+    </body>
+
+</html>

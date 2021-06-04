@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="create-call">
+            <div id="first" style="display: block;">
+                <input placeholder="Enter the ID"
+                        type="text"
+                        id="username-input"/>
+                <a href="#video-call-div"><button onclick="joinCall()">Join Call</button></a>
+            </div>
+            <div id="second" style="display: none;">
+                <input type="text" value="" id="myInput" readonly>
+                <button>Joined</button>
+            </div>
+        </div>
+        <div id="video-call-div">
+            <video muted id="local-video" autoplay></video>
+            <video id="remote-video" autoplay></video>
+            <div class="call-action-div">
+                <a href="http://127.0.0.1:8080/receiver.html"><img src="end_call_icon.png"></a>
+                <button onclick="muteVideo()">Mute Video</button>
+                <button onclick="muteAudio()">Mute Audio</button>
+            </div>
+            <div id="alert-box" style="display: none;">
+                <p id="alert">
+                    The caller is happy.
+                </p>
+            </div>
+        </div>
+        <script src="node_modules/face-api.js/dist/face-api.js"></script>
+        <script src="receiver.js"></script>
+    </body>
+
+</html>
